@@ -1,0 +1,388 @@
+/* Configurações Gerais e Cores Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121214;
+    color: #f3f4f6;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+/* Utilitários de Layout */
+.container {
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* 1. CABEÇALHO (HEADER) */
+.site-header {
+    background-color: #1E1E24;
+    border-bottom: 1px solid #1f2937;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    background: linear-gradient(to right, #34d399, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-text-white {
+    color: #ffffff;
+}
+
+.badge-jornalismo {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #34d399;
+}
+
+.nav-links a.active {
+    color: #34d399;
+    font-weight: 600;
+}
+
+.search-bar {
+    background-color: #121214;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    border: 1px solid #1f2937;
+    font-size: 12px;
+    color: #9ca3af;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .search-bar {
+        width: auto;
+        text-align: left;
+    }
+}
+
+/* 2. ALERTA DE ÚLTIMA HORA */
+.alert-bar {
+    background-color: rgba(245, 158, 11, 0.1);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    font-size: 12px;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.alert-uppercase {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 4px;
+}
+
+/* 3. GRID E CONTEÚDO PRINCIPAL */
+.main-grid {
+    display: grid;
+    grid-template-cols: 1xl;
+    gap: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+@media (min-width: 1024px) {
+    .main-grid {
+        grid-template-cols: repeat(3, minmax(0, 1fr));
+    }
+    .main-article {
+        grid-column: span 2 / span 2;
+    }
+}
+
+.card-bg {
+    background-color: #1E1E24;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(31, 41, 55, 0.6);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.category-tag {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    display: inline-block;
+}
+
+.article-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: 16px;
+    line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+    .article-title {
+        font-size: 30px;
+    }
+}
+
+.article-meta {
+    color: #9ca3af;
+    font-size: 12px;
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 16px;
+}
+
+.meta-comments {
+    color: #34d399;
+}
+
+/* Ilustração / Imagem do Post */
+.article-image-placeholder {
+    margin: 24px 0;
+    background: linear-gradient(to bottom right, #111827, #062f21, #111827);
+    height: 256px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+    border: 1px solid #1f2937;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+    z-index: 1;
+}
+
+.image-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e5e7eb;
+    z-index: 1;
+}
+
+.image-desc {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 4px;
+    max-width: 384px;
+    z-index: 1;
+}
+
+/* Corpo do Texto */
+.article-body {
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+@media (min-width: 768px) {
+    .article-body {
+        font-size: 16px;
+    }
+}
+
+.article-body p {
+    margin-bottom: 16px;
+}
+
+.article-body b {
+    color: #ffffff;
+}
+
+.highlight {
+    color: #34d399;
+    font-weight: 600;
+}
+
+/* Bloco Informativo Interno */
+.info-box {
+    background-color: #121214;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #1f2937;
+    margin: 24px 0;
+}
+
+.info-box h3 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.info-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.info-box li {
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.code-badge {
+    color: #34d399;
+    background-color: rgba(16, 185, 129, 0.1);
+    padding: 0 4px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* 4. SIDEBAR (BARRA LATERAL) */
+.sidebar-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #9ca3af;
+    margin-bottom: 16px;
+}
+
+.sidebar-widgets {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.widget-item {
+    background-color: #121214;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #1f2937;
+}
+
+.widget-item-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.widget-item-title.alert-text {
+    color: #f87171;
+}
+
+.widget-item-desc {
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.sidebar-button {
+    width: 100%;
+    margin-top: 16px;
+    background: linear-gradient(to right, #10b981, #059669);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 10px 15px -3px rgba(6, 47, 33, 0.4);
+}
+
+.sidebar-button:hover {
+    background: linear-gradient(to right, #059669, #047857);
+}
+
+/* 5. RODAPÉ (FOOTER) */
+.site-footer {
+    background-color: #1E1E24;
+    border-top: 1px solid #1f2937;
+    margin-top: 48px;
+    padding: 32px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.warning-box {
+    max-width: 672px;
+    margin: 0 auto;
+    font-size: 10px;
+    line-height: 1.625;
+    background-color: #121214;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #1f2937;
+}
+
+.warning-box b {
+    color: #9ca3af;
+}
